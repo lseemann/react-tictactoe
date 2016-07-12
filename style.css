@@ -1,0 +1,136 @@
+body {
+  font-family: sans-serif;
+}
+
+#outer {
+  margin: 40px auto 0;
+  max-width: 300px;
+}
+
+#board {
+  display       : flex;
+  flex-flow     : row wrap;
+  margin-bottom : 20px;
+}
+
+#configuration {
+  margin-bottom: 40px;
+}
+
+div.spot {
+  align-items     : center;
+  -moz-box-sizing : border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  cursor          : pointer;
+  flex-grow       : 0;
+  flex-shrink     : 0;
+  display         : flex;
+  font-size       : 40px;
+  font-weight     : 900;
+  height          : 100px;
+  justify-content : center;
+  text-align      : center;
+  vertical-align  : center;
+  width           : 33.3333%;
+}
+
+#board:not(.game-over) div.spot:not(.taken):hover {
+  background: #333;
+}
+#board.game-over div.spot:not(.taken):hover {
+  background: #fff;
+  cursor: default;
+}
+div.spot.taken {
+  cursor: default;
+}
+div.spot.column-0, div.spot.column-1 {
+  border-right: 1px solid #aaa;
+}
+div.spot.row-0, div.spot.row-1 {
+  border-bottom: 1px solid #aaa;
+}
+div.spot.winner {
+  background: #eee;
+}
+div.spot.winner-1 {
+  color: green;
+}
+div.spot.winner-2 {
+  color: red;
+}
+
+/*=====  End of main playing board  ======*/
+
+input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: -3px;
+}
+
+input[type="text"] {
+  -moz-box-sizing : border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  font-size       : 20px;
+  font-weight     : 700;
+  height          : 40px;
+  line-height: 1;
+  margin-left: 10px;
+  padding         : 5px;
+  text-align: center;
+}
+
+button {
+  -moz-box-sizing : border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  background      : #999;
+  border          : none;
+  color           : #eee;
+  display         : block;
+  margin          : 0 auto 10px;
+  padding         : 10px;
+  position        : relative;
+  text-align      : center;
+  width           : 300px;
+}
+
+button.active {
+  background: steelblue;
+  cursor: pointer;
+}
+
+button.active:active {
+  left: 2px;
+  top: 2px;
+}
+
+div#announcement {
+  -moz-box-sizing : border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  font-size       : 20px;
+  font-weight     : 700;
+  margin-bottom   : 20px;
+  text-align      : center;
+}
+
+div#announcement em {
+  display     : block;
+  font-size   : 12px;
+  font-weight : 100;
+}
+
+.player-choice {
+  padding: 5px;
+}
+
+#ttt-arena {
+  display: none;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+#ttt-options tr:last-child td {
+  border-top: 1px solid #aaa;
+}
+
+.error {
+  color         : red;
+  margin-bottom : 10px;
+}
